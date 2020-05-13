@@ -165,7 +165,7 @@ plot(activity2$interval, activity2$Average_steps,
      main = "Average number of Steps taken in 5 - minute intervals")
 ```
 
-![](PA1_template_files/figure-html/time-series plot-1.png)<!-- -->
+![](PA1_template_files/figure-html/time_series_plot-1.png)<!-- -->
 
 After this step based on the plot we find the 5 - minute interval that, on an average contains the maximum number of steps.
 
@@ -195,7 +195,7 @@ hist(impute_plot$steps_sum,
      main = "Histogram of Total Number of steps taken per Day", ylim = c(0, 30))
 ```
 
-![](PA1_template_files/figure-html/histogram new-1.png)<!-- -->
+![](PA1_template_files/figure-html/histogram_new-1.png)<!-- -->
 
 Then, to understand the change in the data set the mean and median number of steps taken each day is also calculate with this new data set.
 
@@ -221,6 +221,6 @@ grouped_dataset = imputed_data %>% group_by(WeekType, interval) %>% summarize(st
 qplot(interval, steps_sum, data = grouped_dataset, geom = "line", facets = WeekType~., xlab = "Interval", ylab = "Number of Steps", main = "Average Number of Steps Weekdays VS Weekends")
 ```
 
-![](PA1_template_files/figure-html/time series plot 2-1.png)<!-- -->
+![](PA1_template_files/figure-html/time_series_plot_2-1.png)<!-- -->
 
 So from the plot, it is clearly evident that there is considerable difference between the activity patterns between weekdays and the weekends.

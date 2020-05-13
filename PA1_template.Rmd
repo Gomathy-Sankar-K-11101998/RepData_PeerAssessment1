@@ -62,7 +62,7 @@ This is the stage where the daily activity pattern of the steps for each of the 
 
 So the below code is used to plot a time - series plot of the average number of steps taken in different intervals.
 
-```{r time-series plot, fig.height = 5}
+```{r time_series_plot, fig.height = 5}
 
 activity2 = activity %>% group_by(interval) %>% summarize(Average_steps = mean(steps, na.rm = TRUE))
 plot(activity2$interval, activity2$Average_steps, 
@@ -95,7 +95,7 @@ imputed_data = kNN(activity, variable = "steps")
 
 Now after the missing values are imputed in the data set, with this new dataset a histogram is plotted that represents the total number of steps taken each day.
 
-```{r histogram new, fig.height = 5}
+```{r histogram_new, fig.height = 5}
 
 impute_plot = imputed_data %>% group_by(date) %>% summarize(steps_sum = sum(steps))
 hist(impute_plot$steps_sum, 
@@ -119,7 +119,7 @@ Hence, on recalculating, the mean and median number of steps taken each day are 
 
 This is the final stage of this project work. In this stage, again the time - series plot for understanding the average number of steps taken each day is plotted. But for this plot, the new imputed data set is taken into consideration and the plot is divided into 2 panels. One that contains the plot for all the weekdays and the other contains the plot for all the weekends. So this is done to understand the daily activity pattern acroos the weekdays and weekends.
 
-```{r time series plot 2, fig.height = 5}
+```{r time_series_plot_2, fig.height = 5}
 
 imputed_data$Day = weekdays(imputed_data$date)
 imputed_data$WeekType = "weekday"
