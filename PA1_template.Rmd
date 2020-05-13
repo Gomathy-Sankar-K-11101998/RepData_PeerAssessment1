@@ -42,6 +42,7 @@ activity1 = activity %>% group_by(date) %>% summarize(steps_sum = sum(steps))
 hist(activity1$steps_sum, 
      col = 'red', xlab = "Total Number of steps taken per Day", 
      main = "Histogram of Total Number of steps taken per Day")
+dev.copy(png, file = "Histogram1.png")
 
 ```
 
@@ -70,6 +71,7 @@ plot(activity2$interval, activity2$Average_steps,
      xlab = "5 - Minute Interval", 
      ylab = "Average Number of steps taken", 
      main = "Average number of Steps taken in 5 - minute intervals")
+dev.copy(png, file = "TimeSeriesPlot1.png")
 
 ```
 
@@ -101,6 +103,7 @@ impute_plot = imputed_data %>% group_by(date) %>% summarize(steps_sum = sum(step
 hist(impute_plot$steps_sum, 
      col = 'red', xlab = "Total Number of steps taken per Day", 
      main = "Histogram of Total Number of steps taken per Day", ylim = c(0, 30))
+dev.copy(png, file = "Histogram2.png")
 
 ```
 
@@ -127,6 +130,8 @@ imputed_data$WeekType[imputed_data$Day %in% c("Saturday", "Sunday")] = "weekend"
 
 grouped_dataset = imputed_data %>% group_by(WeekType, interval) %>% summarize(steps_sum = mean(steps))
 qplot(interval, steps_sum, data = grouped_dataset, geom = "line", facets = WeekType~., xlab = "Interval", ylab = "Number of Steps", main = "Average Number of Steps Weekdays VS Weekends")
+dev.copy(png, file = "WeekdaysPlot.png")
+dev.off()
 
 ```
 
