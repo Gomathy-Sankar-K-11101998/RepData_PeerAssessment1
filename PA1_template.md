@@ -139,15 +139,6 @@ hist(activity1$steps_sum,
 
 ![](PA1_template_files/figure-html/histogram-1.png)<!-- -->
 
-```r
-dev.copy(png, file = "Histogram1.png")
-```
-
-```
-## png 
-##   3
-```
-
 Now after the histogram is plotted the mean and median number of steps taken each day is calculated.
 
 
@@ -175,15 +166,6 @@ plot(activity2$interval, activity2$Average_steps,
 ```
 
 ![](PA1_template_files/figure-html/time-series plot-1.png)<!-- -->
-
-```r
-dev.copy(png, file = "TimeSeriesPlot1.png")
-```
-
-```
-## png 
-##   4
-```
 
 After this step based on the plot we find the 5 - minute interval that, on an average contains the maximum number of steps.
 
@@ -215,15 +197,6 @@ hist(impute_plot$steps_sum,
 
 ![](PA1_template_files/figure-html/histogram new-1.png)<!-- -->
 
-```r
-dev.copy(png, file = "Histogram2.png")
-```
-
-```
-## png 
-##   5
-```
-
 Then, to understand the change in the data set the mean and median number of steps taken each day is also calculate with this new data set.
 
 
@@ -249,23 +222,5 @@ qplot(interval, steps_sum, data = grouped_dataset, geom = "line", facets = WeekT
 ```
 
 ![](PA1_template_files/figure-html/time series plot 2-1.png)<!-- -->
-
-```r
-dev.copy(png, file = "WeekdaysPlot.png")
-```
-
-```
-## png 
-##   6
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
 
 So from the plot, it is clearly evident that there is considerable difference between the activity patterns between weekdays and the weekends.
